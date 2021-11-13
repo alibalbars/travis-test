@@ -7,12 +7,11 @@ jobs: # bu bir obje olabilir, ve objenin her key'i job ismi olur
     runs-on: ubuntu-latest
     steps:
       - name: echo a string
-        run: echo "Hello world Ali Balbars"
+        run: eccho "Hello world Ali Balbars"
       - name: multiline script
         run: |
           node -v
           npm -v
-
 
           
 
