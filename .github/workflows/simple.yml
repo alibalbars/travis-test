@@ -13,10 +13,10 @@ jobs: # bu bir obje olabilir, ve objenin her key'i job ismi olur
           node -v
           npm -v
       - name: python Command
-        shell: python
+        shell: python # bash yerine python shell'inde calistir
         run: |
           import platform
-          print(platform.processor)
+          print(platform.processor())
 
           
 
@@ -27,3 +27,4 @@ jobs: # bu bir obje olabilir, ve objenin her key'i job ismi olur
 # steps, obje arrayidir ve her obje bir stepi temsil eder
 # step'lere name verilebilir fakat required degildir
 # bir step ya bir action calistirir ya da bir shell command calistirir (shell command calistirmak icin run keywordu kullanilir)
+# bir step hata verirse diger stepler calismaz
