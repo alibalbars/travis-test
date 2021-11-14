@@ -25,6 +25,7 @@ jobs: # bu bir obje olabilir, ve objenin her key'i job ismi olur
       - name: Directory Bash
         shell: bash
         run: pwd
+        
 
 
 
