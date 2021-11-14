@@ -13,6 +13,7 @@ jobs: # bu bir obje olabilir, ve objenin her key'i job ismi olur
           node -v
           npm -v
       - name: python Command
+        shell: python
         run: |
           import platform
           print(platform.processor)
