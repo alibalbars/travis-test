@@ -38,7 +38,7 @@ jobs: # bu bir obje olabilir, ve objenin her key'i job ismi olur
 
 
 
-          
+# bir event oldugunda calisan sey Workflow'dur.
 
 # job isminde sadece dash ya da underscore olabilir; space olamaz
 # her job bir obje olarak tanimlanir
@@ -54,3 +54,5 @@ jobs: # bu bir obje olabilir, ve objenin her key'i job ismi olur
 
 #powershell sadece windows makine uzerinde calisir, 
 # bash tum isletim sistemlerinde calisir
+
+

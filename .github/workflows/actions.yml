@@ -1,0 +1,34 @@
+name: Actions Workflow
+
+on: 
+  - push
+
+jobs: 
+  run-github-actions: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple JS Action
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: Emre Ayhan
+      
+
+
+
+
+
+
+# uses action referansi alir
+# js action'lari vardir. Action'lar ayrica baska bir sekilde de yazilabilir
+
+# kendi Action'larimizi nasil yazariz sonra ogrenicez, kendi projemizde actioni yazip "uses" a path'ini verebiliriz,
+  # ya da github'da public olarak paylasilmis bir actioni kullanabiliriz
+
+# uses: {user_name}/{repo_name} formatinda alir
+# uses: {user_name}/{repo_name}@master => istersek diledigimiz branchi secebiliriz
+# uses: {user_name}/{repo_name}@v1.1 => istersek diledigimiz versiyonu secebiliriz
+# uses: {user_name}/{repo_name}@{COMMIT SHA1} => istersek diledigimiz commiti secebiliriz
+
+# @master gibi sabit olarak herhangi bir branchi secersek skinti su olur
+  # eskiden v1 kullaniyoduk v2 ciktiginda haberimiz olmadan v2'yi kullaniyor olabiliriz (patlayabiliriz eger breaking changes varsa)
+  # en temizi @versiyon ya da @commitID kullanmak
