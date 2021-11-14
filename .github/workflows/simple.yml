@@ -13,10 +13,27 @@ jobs: # bu bir obje olabilir, ve objenin her key'i job ismi olur
           node -v
           npm -v
       - name: python Command
-        shell: python # bash yerine python shell'inde calistir
+        shell: python # bash yerine python shell'inde calistir (ubuntuda default shell => bash)
         run: |
           import platform
           print(platform.processor())
+  run-windows-commands: 
+    runs-on: windows-latest
+    steps: 
+      - name: Directory Powershell
+        run: Get-Location
+      - name: Directory Bash
+        shell: bash
+        run: pwd
+
+
+
+
+
+
+
+
+
 
           
 
@@ -28,3 +45,9 @@ jobs: # bu bir obje olabilir, ve objenin her key'i job ismi olur
 # step'lere name verilebilir fakat required degildir
 # bir step ya bir action calistirir ya da bir shell command calistirir (shell command calistirmak icin run keywordu kullanilir)
 # bir step hata verirse diger stepler calismaz
+
+
+# Butun Joblar kendi isletim sisteminde paralel olarak calisir (*)
+
+#powershell sadece windows makine uzerinde calisir, 
+# bash tum isletim sistemlerinde calisir
