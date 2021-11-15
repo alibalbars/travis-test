@@ -1,0 +1,55 @@
+name: Actions Workflow
+
+on: 
+  - push
+
+jobs: 
+  run-github-actions: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: List Files
+        run: |
+          pwd
+          ls -a
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: List Files After Checkout
+        run: |
+          pwd
+          ls -a
+      - name: Echo ENV VARS
+        run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo ${{ github.token }}
+          echo $GITHUB_REF
+
+      - name: Simple JS Action
+        id: greet
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: Emre Ayhan
+      - name: Log Greeting Time
+        run: echo "${{ steps.greet.outputs.time }}"
+      
+
+
+
+
+
+
+# uses action referansi alir
+# js action'lari vardir. Action'lar ayrica baska bir sekilde de yazilabilir
+
+# kendi Action'larimizi nasil yazariz sonra ogrenicez, kendi projemizde actioni yazip "uses" a path'ini verebiliriz,
+  # ya da github'da public olarak paylasilmis bir actioni kullanabiliriz
+
+# uses: {user_name}/{repo_name} formatinda alir
+# uses: {user_name}/{repo_name}@master => istersek diledigimiz branchi secebiliriz
+# uses: {user_name}/{repo_name}@v1.1 => istersek diledigimiz versiyonu secebiliriz
+# uses: {user_name}/{repo_name}@{COMMIT SHA1} => istersek diledigimiz commiti secebiliriz
+
+# @master gibi sabit olarak herhangi bir branchi secersek skinti su olur
+  # eskiden v1 kullaniyoduk v2 ciktiginda haberimiz olmadan v2'yi kullaniyor olabiliriz (patlayabiliriz eger breaking changes varsa)
+  # en temizi @versiyon ya da @commitID kullanmak

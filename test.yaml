@@ -1,0 +1,34 @@
+user:
+  name:
+    first: ali
+    last: balbars
+  province: istanbul
+dizi:
+  - breaking bad
+  - kurtlar vadisi
+pi: 3.14159
+xmas: true
+french-hens: 3
+database:
+    username: admin
+    password: foobar  # TODO get prod passwords out of config
+    socket: /var/tmp/database.sock
+    options: {use_utf8: true}
+memcached:
+    host: 10.0.0.99
+workers:
+  - host: 10.0.0.101
+    port: 2301
+  - host: 10.0.0.102
+    port: 23021
+ben aslinda json'im: {
+  "dizilerim": ["selamlar", "aleykum selam" ,"😱"]
+}
+long-text: > 
+  satir 1 
+  satir 2
+  satir 3
+long-text-2: |
+  satir 1
+  satir 2
+  satir 3 
